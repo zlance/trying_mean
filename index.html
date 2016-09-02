@@ -6,19 +6,28 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
 		<script src="app.js"></script>
 	</head>
-	<body ng-app="myapp" ng-controller="mainCtrl">
-		<div>
-			{{test}}
-		</div>
-		<form ng-submit="addPost()">
-			<input type="text" placeholder="Title" ng-model="title"></input>
-			<input type="text" placeholder="Link" ng-model="link"></input>
-			<button type="submit">Post</button>
-		</form>
-		<div ng-repeat='post in posts | orderBy:"votes"'>
-			<button ng-click="incrementVotes(post)"><b>^</b></button>
-			{{post.title}} - {{post.votes}}
-		</div>
 
+<script type="text/ng-template" id="/home.html">
+	<div class="page-header">
+		<h1>MEAN</h1>
+	</div>
+
+	
+</script>
+
+	<body ng-app="myapp" ng-controller="mainCtrl">
+		<ui-view></ui-view>
+	<div>
+		{{test}}
+	</div>
+	<form ng-submit="addPost()">
+		<input type="text" placeholder="Title" ng-model="title"></input>
+		<input type="text" placeholder="Link" ng-model="link"></input>
+		<button type="submit">Post</button>
+	</form>
+	<div ng-repeat='post in posts | orderBy:"votes"'>
+		<button ng-click="incrementVotes(post)"><b>^</b></button>
+		{{post.title}} - {{post.votes}}
+	</div>
 	</body>
 </html>

@@ -23,6 +23,12 @@ app.controller('mainCtrl',[
 	}
 ]);
 
+.state('posts', {
+  url: '/posts/{id}',
+  templateUrl: '/posts.html',
+  controller: 'PostsCtrl'
+});
+
 app.factory('posts',[function(){
 	var o = {
 		posts:[]
